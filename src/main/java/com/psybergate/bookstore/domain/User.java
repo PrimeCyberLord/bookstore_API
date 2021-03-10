@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 
@@ -18,8 +19,9 @@ public class User extends BaseEntity{
 
     private String password;
 
-    @OneToMany(fetch = FetchType.EAGER)
-    private List<Role> roles;
+    @ElementCollection
+    @Enumerated(EnumType.STRING)
+    private Collection<UserRole> roles;
 
     @Override
     public boolean equals(Object o) {

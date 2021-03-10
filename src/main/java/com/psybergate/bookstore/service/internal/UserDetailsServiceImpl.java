@@ -1,7 +1,7 @@
 package com.psybergate.bookstore.service.internal;
 
-import com.psybergate.bookstore.domain.Role;
 import com.psybergate.bookstore.domain.User;
+import com.psybergate.bookstore.domain.UserRole;
 import com.psybergate.bookstore.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -34,8 +34,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private Collection<GrantedAuthority> getGrantedAuthorities(User user){
         Collection<GrantedAuthority> grantedAuthorities = new ArrayList<>();
 
-        for(Role role: user.getRoles()){
-            grantedAuthorities.add(new SimpleGrantedAuthority(role.getName().getDescription()));
+        for(UserRole role: user.getRoles()){
+            grantedAuthorities.add(new SimpleGrantedAuthority(role.getDescription()));
         }
 
         return grantedAuthorities;

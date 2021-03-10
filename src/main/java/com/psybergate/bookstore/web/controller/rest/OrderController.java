@@ -31,7 +31,7 @@ public class OrderController {
     }
 
     @PostMapping(value = "/create", consumes = "application/json", produces = "application/json")
-    public List<Order> createOrder(Order order){
+    public List<Order> createOrder(@RequestBody Order order){
         orderService.createOrder(order);
         return orderService.findAllOrders();
     }

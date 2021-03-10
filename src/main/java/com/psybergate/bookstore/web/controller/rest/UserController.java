@@ -18,7 +18,7 @@ public class UserController {
     }
 
     @PostMapping(value = "/create", consumes = "application/json", produces = "application/json")
-    public User createUser(User user){
+    public User createUser(@RequestBody User user){
         return userService.createUser(user);
     }
 

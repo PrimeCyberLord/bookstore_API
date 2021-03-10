@@ -11,10 +11,11 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "order")
+@Table(name = "customer_order")
 public class Order extends BaseEntity {
 
     @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id")
     private List<OrderItem> orderItems;
 
     private double totalPrice;
