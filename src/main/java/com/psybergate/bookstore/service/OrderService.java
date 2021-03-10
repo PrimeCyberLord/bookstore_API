@@ -10,4 +10,5 @@ public interface OrderService {
 
     List<Order> findAllOrders();
 
+    Order createOrder(Order order);
 }
