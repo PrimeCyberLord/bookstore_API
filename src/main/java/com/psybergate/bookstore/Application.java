@@ -1,13 +1,13 @@
-package com.psybergate.absaassessment;
+package com.psybergate.bookstore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AbsaAssessmentApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AbsaAssessmentApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }

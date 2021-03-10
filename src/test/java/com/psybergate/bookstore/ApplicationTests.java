@@ -1,10 +1,10 @@
-package com.psybergate.absaassessment;
+package com.psybergate.bookstore;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AbsaAssessmentApplicationTests {
+class ApplicationTests {
 
 	@Test
 	void contextLoads() {

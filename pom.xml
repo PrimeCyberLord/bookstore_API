@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.psybergate</groupId>
-	<artifactId>absaassessment</artifactId>
+	<artifactId>bookstore</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Absa Assessment</name>
+	<name>bookstore_api</name>
 	<description>Assessment for Absa </description>
 	<properties>
 		<java.version>1.8</java.version>
