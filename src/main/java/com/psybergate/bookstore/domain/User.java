@@ -3,9 +3,8 @@ package com.psybergate.bookstore.domain;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Getter
@@ -18,6 +17,9 @@ public class User extends BaseEntity{
     private String email;
 
     private String password;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    private List<Role> roles;
 
     @Override
     public boolean equals(Object o) {
