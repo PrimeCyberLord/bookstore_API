@@ -1,9 +1,10 @@
 package com.psybergate.bookstore.web.controller.rest;
 
+import com.psybergate.bookstore.domain.Order;
+import com.psybergate.bookstore.domain.User;
 import com.psybergate.bookstore.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/user")
@@ -15,4 +16,15 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
+
+    @PostMapping(value = "/create", consumes = "application/json", produces = "application/json")
+    public User createUser(User user){
+        return userService.createUser(user);
+    }
+
+    @GetMapping(value = "/{id}",produces = "application/json")
+    public User getUser(@PathVariable("id")Long userId){
+        return userService.findByid(userId);
+    }
+
 }
