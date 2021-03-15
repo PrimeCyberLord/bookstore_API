@@ -4,13 +4,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "order_item")
-public class OrderItem extends BaseEntity {
+@Table(name = "book")
+public class Book extends BaseEntity {
 
     private String ISBN;
 

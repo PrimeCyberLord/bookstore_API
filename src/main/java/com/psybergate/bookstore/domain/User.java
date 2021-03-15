@@ -35,4 +35,13 @@ public class User extends BaseEntity{
     public int hashCode() {
         return Objects.hash(email);
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", roles=" + roles +
+                '}';
+    }
 }

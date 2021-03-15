@@ -11,17 +11,36 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "customer_order")
+@Table(name = "app_order")
 public class Order extends BaseEntity {
 
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id")
-    private List<OrderItem> orderItems;
+    @ManyToOne
+    private User owner;
+
+    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    private List<Book> books;
 
     private double totalPrice;
 
     private String address;
 
     private LocalDate dateCreated;
+
+    public void init(){
+         totalPrice = calcTotalPrice(books);
+         dateCreated = LocalDate.now();
+    }
+
+    private double calcTotalPrice(List<Book> books) {
+
+        double total = 0;
+
+        for(Book book:books){
+            total+=book.getPrice()*book.getQuantity();
+        }
+
+        return total;
+
+    }
 
 }
