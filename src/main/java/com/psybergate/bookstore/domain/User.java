@@ -14,6 +14,12 @@ import java.util.Objects;
 @Table(name = "app_user")
 public class User extends BaseEntity{
 
+    @Column(name = "first_name")
+    private String name;
+
+    @Column(name = "last_name")
+    private String surname;
+
     @Column(unique = true)
     private String email;
 
@@ -36,12 +42,4 @@ public class User extends BaseEntity{
         return Objects.hash(email);
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", roles=" + roles +
-                '}';
-    }
 }
