@@ -25,11 +25,6 @@ public class OrderController {
         return orderService.findAllOrders();
     }
 
-    @GetMapping(value = "/{id}", produces = "application/json")
-    public Order getOrder(@PathVariable("id") Long orderId){
-        return orderService.findOrderById(orderId);
-    }
-
     @PostMapping(value = "/create", consumes = "application/json", produces = "application/json")
     public List<Order> createOrder(@RequestBody Order order){
         orderService.createOrder(order);

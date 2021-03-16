@@ -21,10 +21,4 @@ public class UserController {
     public User createUser(@RequestBody User user){
         return userService.createUser(user);
     }
-
-    @GetMapping(value = "/{id}",produces = "application/json")
-    public User getUser(@PathVariable("id")Long userId){
-        return userService.findByid(userId);
-    }
-
 }
