@@ -30,15 +30,15 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(email);
 
-        if(user==null) throw new UsernameNotFoundException("user associated with "+ email + " does not exist");
+        if (user == null) throw new UsernameNotFoundException("user associated with " + email + " does not exist");
 
-        return new org.springframework.security.core.userdetails.User(user.getEmail(),user.getPassword(),getGrantedAuthorities(user));
+        return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), getGrantedAuthorities(user));
     }
 
-    private Collection<GrantedAuthority> getGrantedAuthorities(User user){
+    private Collection<GrantedAuthority> getGrantedAuthorities(User user) {
         Collection<GrantedAuthority> grantedAuthorities = new ArrayList<>();
 
-        for(UserRole role: user.getRoles()){
+        for (UserRole role : user.getRoles()) {
             grantedAuthorities.add(new SimpleGrantedAuthority(role.getDescription()));
         }
 
