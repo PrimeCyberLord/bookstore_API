@@ -21,17 +21,14 @@ public class OrderController {
     }
 
     @GetMapping(value = "/all", produces = "application/json")
-    public List<Order> getAllOrders(){
+    public List<Order> getAllOrders() {
         return orderService.findAllOrders();
     }
 
     @PostMapping(value = "/create", consumes = "application/json", produces = "application/json")
-    public List<Order> createOrder(@RequestBody Order order){
+    public List<Order> createOrder(@RequestBody Order order) {
         orderService.createOrder(order);
         return orderService.findAllOrders();
     }
-
-
-
 
 }

@@ -12,7 +12,7 @@ import java.util.Objects;
 @Setter
 @Entity
 @Table(name = "app_user")
-public class User extends BaseEntity{
+public class User extends BaseEntity {
 
     @Column(name = "first_name")
     private String name;
@@ -31,10 +31,10 @@ public class User extends BaseEntity{
 
     @Override
     public boolean equals(Object o) {
-      if(o == null) return false;
-      if(this.getClass() != o.getClass()) return false;
-      User user = (User) o;
-      return user.getEmail().equals(this.getEmail());
+        if (o == null) return false;
+        if (this.getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return user.getEmail().equals(this.getEmail());
     }
 
     @Override
