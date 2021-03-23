@@ -12,7 +12,7 @@
 	<artifactId>bookstore</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bookstore_api</name>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<description>Assessment for Absa </description>
 	<properties>
 		<java.version>1.8</java.version>
@@ -62,6 +62,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -79,6 +86,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>bookstore</finalName>
 	</build>
 
 </project>
