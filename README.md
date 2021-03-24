@@ -1,3 +1,7 @@
+Already Added User
+ email: john@gmail.com
+ password:12345
+
 How to create a new user
 
   Endpoint:http://ec2-3-128-192-93.us-east-2.compute.amazonaws.com:8080/bookstore/api/user/create
